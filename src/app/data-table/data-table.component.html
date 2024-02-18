@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td *ngFor="let column of columns">
+        {{ column.title }}
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of datas">
+      <td *ngFor="let column of columns">
+        <ng-template
+          *ngTemplateOutlet="
+            tmplRef;
+            context: { $implicit: { data: data[column.key], key: column.key } }
+          "
+        >
+          {{ data[column.key] }}
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

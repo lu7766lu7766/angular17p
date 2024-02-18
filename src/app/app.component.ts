@@ -8,11 +8,18 @@ import {
 } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { OnInit } from '@angular/core';
+import { DataTableComponent } from './data-table/data-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterModule, FormsModule],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    DataTableComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
