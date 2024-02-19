@@ -43,13 +43,20 @@
   ]"
 >
   <ng-template #tmpl let-item>
-    <ng-container *ngIf="item.key !== 'action'; else action">
+    <!-- <ng-container *ngIf="item.key !== 'action'; else action">
       {{ item.data }}
     </ng-container>
     <ng-template #action>
       <button>add</button>
       <button>update</button>
       <button>delete</button>
-    </ng-template>
+    </ng-template> -->
+    @if (item.key !== 'action') {
+    {{ item.data }}
+    } @else {
+    <button>add</button>
+    <button>update</button>
+    <button>delete</button>
+    }
   </ng-template>
 </app-data-table>
